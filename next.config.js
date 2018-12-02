@@ -15,5 +15,11 @@ module.exports = withCSS({
     })
 
     return config
-  }
+  },
+  exportPathMap: async function (defaultPathMap) {
+    return {
+      '/': { page: '/' }
+    }
+  },
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/people-list' : '',
 })
