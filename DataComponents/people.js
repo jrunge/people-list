@@ -1,13 +1,18 @@
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
+import PeopleTable from '../Components/peopletable'
 
 export const peopleQuery = gql`
   query users {
     people (ext: true, amount: 100)
       @rest(type: "[Person]", path: "/?{args}") {
       name
+      surname
       gender
+      region
       phone
+      email
+      photo
     }
   }
 `
@@ -20,16 +25,7 @@ export default function PostList () {
         if (loading) return <div>Loading</div>
 
         return (
-          <div>
-            {people.map((person, i) => (
-              <div key={`person-${i}`}>
-                <div>{person.name}</div>
-                <div>{person.gender}</div>
-                <div>{person.phone}</div>
-              </div>
-            )
-            )}
-          </div>
+          <PeopleTable rows={people} />
         )
       }}
     </Query>

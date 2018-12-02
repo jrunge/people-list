@@ -1,3 +1,7 @@
 import People from '../DataComponents/people'
 
-export default () => <People/>
+export default () => (
+  <div className="ui container">
+    <People/>
+  </div>
+)
