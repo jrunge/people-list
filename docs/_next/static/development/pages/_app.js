@@ -182,7 +182,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
                   // Prevent Apollo Client GraphQL errors from crashing SSR.
                   // Handle them in components via the data.error prop:
                   // https://www.apollographql.com/docs/react/api/react-apollo.html#graphql-query-data-error
-                  console.error('Error while running `getDataFromTree`', _context.t0);
+                  console.error("Error while running `getDataFromTree`", _context.t0);
 
                 case 16:
                   // getDataFromTree does not call componentWillUnmount
@@ -235,7 +235,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }]);
 
     return Apollo;
-  }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component), _defineProperty(_class, "displayName", 'withApollo(App)'), _temp;
+  }(react__WEBPACK_IMPORTED_MODULE_1___default.a.Component), _defineProperty(_class, "displayName", "withApollo(App)"), _temp;
 });
 
 /***/ }),
@@ -26308,20 +26308,20 @@ function (_App) {
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(next_app__WEBPACK_IMPORTED_MODULE_0__["Container"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 9
+          lineNumber: 10
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_apollo__WEBPACK_IMPORTED_MODULE_3__["ApolloProvider"], {
         client: apolloClient,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 10
+          lineNumber: 11
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Component, _extends({}, pageProps, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 11
+          lineNumber: 12
         },
         __self: this
       }))));

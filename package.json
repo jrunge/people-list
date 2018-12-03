@@ -33,5 +33,20 @@
     "start": "next start",
     "export": "next export -o docs",
     "gh-pages": "rm -rf node_modules/.cache && rm -rf docs && next build && next export -o docs && touch docs/.nojekyll"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{Components,DataComponents,lib,pages}/*.{js,json,css,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0"
   }
 }

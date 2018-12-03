@@ -39,12 +39,12 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 var columns = [{
-  property: 'photo',
+  property: "photo",
   // props: {
   //   style: { minWidth: 50, width: 50 }
   // },
   header: {
-    label: 'Photo'
+    label: "Photo"
   },
   cell: {
     formatters: [function (photo, extra) {
@@ -53,41 +53,41 @@ var columns = [{
         className: "ui tiny rounded image",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 18
+          lineNumber: 17
         },
         __self: this
       });
     }]
   }
 }, {
-  property: 'name',
+  property: "name",
   header: {
-    label: 'First Name'
+    label: "First Name"
   }
 }, {
-  property: 'surname',
+  property: "surname",
   header: {
-    label: 'Last Name'
+    label: "Last Name"
   }
 }, {
-  property: 'gender',
+  property: "gender",
   header: {
-    label: 'Gender'
+    label: "Gender"
   }
 }, {
-  property: 'region',
+  property: "region",
   header: {
-    label: 'Region'
+    label: "Region"
   }
 }, {
-  property: 'phone',
+  property: "phone",
   header: {
-    label: 'Phone'
+    label: "Phone"
   }
 }, {
-  property: 'email',
+  property: "email",
   header: {
-    label: 'Email'
+    label: "Email"
   }
 }];
 
@@ -110,13 +110,13 @@ function (_React$Component) {
         columns: columns,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 64
+          lineNumber: 62
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactabular_table__WEBPACK_IMPORTED_MODULE_1__["Header"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 68
+          lineNumber: 63
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(reactabular_table__WEBPACK_IMPORTED_MODULE_1__["Body"], {
@@ -124,7 +124,7 @@ function (_React$Component) {
         rowKey: "email",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 71
+          lineNumber: 65
         },
         __self: this
       }));
@@ -160,7 +160,7 @@ var _jsxFileName = "/Users/josrun/Documents/git/interviews/eftest/DataComponents
 
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  query users {\n    people (ext: true, amount: 100)\n      @rest(type: \"[Person]\", path: \"/?{args}\") {\n      name\n      surname\n      gender\n      region\n      phone\n      email\n      photo\n    }\n  }\n"]);
+  var data = _taggedTemplateLiteral(["\n  query users {\n    people(ext: true, amount: 100) @rest(type: \"[Person]\", path: \"/?{args}\") {\n      name\n      surname\n      gender\n      region\n      phone\n      email\n      photo\n    }\n  }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -180,7 +180,7 @@ function PostList() {
     query: peopleQuery,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 21
     },
     __self: this
   }, function (_ref) {
@@ -190,14 +190,14 @@ function PostList() {
     if (error) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 24
+        lineNumber: 23
       },
       __self: this
     }, "Error loading people.'");
     if (loading) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 25
+        lineNumber: 24
       },
       __self: this
     }, "Loading");
@@ -205,7 +205,7 @@ function PostList() {
       rows: people,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 28
+        lineNumber: 26
       },
       __self: this
     });
@@ -21476,15 +21476,26 @@ var _jsxFileName = "/Users/josrun/Documents/git/interviews/eftest/pages/index.js
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "ui container",
+    style: {
+      paddingTop: 10,
+      paddingBottom: 10
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 4
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DataComponents_people__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "ui header padding",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 5
+    },
+    __self: this
+  }, "User List"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_DataComponents_people__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6
     },
     __self: this
   }));
