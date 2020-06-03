@@ -1,8 +1,6 @@
 import React from "react";
 import * as Table from "reactabular-table";
 
-import "semantic-ui-css/semantic.css";
-
 const columns = [
   {
     property: "photo",

@@ -1,13 +1,22 @@
 # people-list
-A quick demo of fetching and displaying users from the uinames.com API
+A quick demo of fetching and displaying users from the Random User Generator API
 
 View a [live demo.](https://jrunge.github.io/people-list/)
 
+To run it locally:
+
+```bash
+npm install
+npm run dev
+# or
+yarn
+yarn dev
+```
 
 ## Summary
 I used Next.js as core build platform for this project. It support server side rendering (SSR) when deployed as a node.js server. The current demo uses statically rendered content on Github pages.
 
-To fetch the content, I used the Apollo GraphQL client side library. Since the API provided (https://uinames.com/api/?ext&amount=100) is strictly a JSON REST API, I used apollo-rest-link to provided a GraphQL-like interface.
+To fetch the content, I used the Apollo GraphQL client side library. Since the API provided (https://randomuser.me/api/?results=100) is strictly a JSON REST API, I used apollo-rest-link to provided a GraphQL-like interface.
 
 After fetching the data, it is rendered as a table using Reactabular and styled using Semantic UI css.
 

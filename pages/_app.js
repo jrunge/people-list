@@ -1,19 +1,7 @@
-import App, { Container } from "next/app";
-import React from "react";
-import withApolloClient from "../lib/with-apollo-client";
-import { ApolloProvider } from "react-apollo";
+import 'semantic-ui-css/semantic.min.css'
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps, apolloClient } = this.props;
-    return (
-      <Container>
-        <ApolloProvider client={apolloClient}>
-          <Component {...pageProps} />
-        </ApolloProvider>
-      </Container>
-    );
-  }
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
 
-export default withApolloClient(MyApp);
+export default MyApp

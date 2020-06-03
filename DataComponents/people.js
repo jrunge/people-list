@@ -1,30 +1,47 @@
-import { Query } from "react-apollo";
+import { useQuery } from '@apollo/react-hooks'
+import { NetworkStatus } from 'apollo-client'
 import gql from "graphql-tag";
 import PeopleTable from "../Components/peopletable";
 
 export const peopleQuery = gql`
   query users {
-    people(ext: true, amount: 100) @rest(type: "[Person]", path: "/?{args}") {
-      name
-      surname
+    results(results: 100) @rest(type: "Results", path: "/?{args}") {
+      name @type(name: "Name") {
+        first
+        last
+      }
       gender
-      region
       phone
       email
-      photo
+      nat
+      picture @type(name: "Picture") {
+        medium
+      }
     }
   }
 `;
 
-export default function PostList() {
-  return (
-    <Query query={peopleQuery}>
-      {({ loading, error, data: { people } }) => {
-        if (error) return <div>Error loading people.'</div>;
-        if (loading) return <div>Loading</div>;
+export default function People() {
+  const { loading, error, data, fetchMore, networkStatus } = useQuery(
+    peopleQuery
+  )
 
-        return <PeopleTable rows={people} />;
-      }}
-    </Query>
+  if (error) return <div>Error loading people.</div>
+  if (loading) return <div>Loading</div>
+
+  const { results } = data
+  const people = results.map(person => {
+    return {
+      name: person.name.first,
+      surname: person.name.last,
+      gender: person.gender,
+      phone: person.phone,
+      email: person.email,
+      region: person.nat,
+      photo: person.picture.medium
+    }
+  })
+  return (
+    <PeopleTable rows={people} />
   );
 }
